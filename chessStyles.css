@@ -1,0 +1,16 @@
+.white {
+  width: 90px;
+  height: 90px;
+  background-color: white;
+}
+
+.black {
+  width: 90px;
+  height: 90px;
+  background-color: black;
+}
+
+#tableGrid {
+  margin: 0 auto;
+  border: solid 1px black;
+}
