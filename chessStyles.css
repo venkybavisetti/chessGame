@@ -7,10 +7,16 @@
 .black {
   width: 90px;
   height: 90px;
-  background-color: black;
+  background-color: grey;
 }
 
 #tableGrid {
   margin: 0 auto;
   border: solid 1px black;
+}
+
+.possibleWays {
+  width: 90px;
+  height: 90px;
+  background-color: yellow;
 }
