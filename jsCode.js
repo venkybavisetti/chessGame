@@ -80,15 +80,15 @@ class BlackPawn {
     this.position = position.slice();
     this.img = img;
   }
-  get possibleMoves() {
-    let [row, colum] = this.position;
-    return [++row, colum];
-  }
   get location() {
     return this.position.slice();
   }
   get image() {
     return this.img;
+  }
+  get possibleMoves() {
+    let [row, colum] = this.position;
+    return [[++row, colum]];
   }
   move1Step() {
     let [row, colum] = this.position;
@@ -212,16 +212,16 @@ const erasePreviousStep = function(parent, child) {
 };
 
 const runPieces = function(parent) {
-  const child = parent.childNodes[0];
+  const child = parent.firstElementChild;
   const requirePiece = BlackChessPieces[child.id];
   requirePiece.move1Step();
   displayPiecesPositions(BlackChessPieces);
   erasePreviousStep(parent, child);
 };
 
+let WhiteChessPieces = { ...getWhiteChessPieces() };
+let BlackChessPieces = { ...getBlackChessPieces() };
 const main = function() {
-  WhiteChessPieces = { ...getWhiteChessPieces() };
-  BlackChessPieces = { ...getBlackChessPieces() };
   createChessBoard();
   displayPiecesPositions(WhiteChessPieces);
   displayPiecesPositions(BlackChessPieces);
